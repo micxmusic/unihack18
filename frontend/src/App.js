@@ -12,6 +12,7 @@ import Contributions from "./components/Contributions";
 import IngredientSearchBox from "./components/IngredientSearchBox";
 import PonyNote from "./components/PonyNote";
 import UserProfile from "./components/UserProfile";
+import AddRecipe from "./components/AddRecipe";
 let store = createStore(ponyApp, applyMiddleware(thunk));
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
           <React.Fragment>
             <Topbar />
             <Switch>
+              <Route exact path="/addrecipe" component={AddRecipe} />
               <Route exact path="/myprofile" component={UserProfile} />
               <Route exact path="/contributions" component={Contributions} />
               <Route exact path="/login" component={Login} />
