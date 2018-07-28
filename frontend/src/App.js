@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import ponyApp from "./reducers";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import Topbar from "./components/Topbar";
 
 let store = createStore(ponyApp, applyMiddleware(thunk));
 
@@ -14,10 +15,13 @@ class App extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={PonyNote} />
-            <Route component={NotFound} />
-          </Switch>
+          <React.Fragment>
+            <Topbar />
+            <Switch>
+              <Route exact path="/" component={PonyNote} />
+              <Route component={NotFound} />
+            </Switch>
+          </React.Fragment>
         </BrowserRouter>
       </Provider>
     );
