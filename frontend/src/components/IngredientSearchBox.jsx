@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { ingredients } from "../actions";
+import AvailableRecipes from "./AvailableRecipes";
 import {
   Jumbotron,
   Button,
   Container,
   Row,
+  Col,
   Table,
   Input,
   Form,
@@ -38,7 +40,6 @@ class IngredientSearchBox extends Component {
   }
 
   render() {
-    console.log(this.state.chosenIngredients);
     return (
       <Container fluid>
         <Input
@@ -48,26 +49,33 @@ class IngredientSearchBox extends Component {
         />
 
         <hr />
-        <Table>
-          <tbody>
-            {this.props.ingredients.map((ingredient, id) => (
-              <tr key={`ingredient_${ingredient.id}`}>
-                <td>
-                  <Button
-                    color="primary"
-                    onClick={() => this.onCheckboxBtnClick(ingredient.id)}
-                    active={this.state.chosenIngredients.includes(
-                      ingredient.id
-                    )}
-                  >
-                    {ingredient.name}
-                  </Button>
-                </td>
-                <td>{ingredient.id}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+        <Row>
+          <Col>
+            <Table>
+              <tbody>
+                {this.props.ingredients.map((ingredient, id) => (
+                  <tr key={`ingredient_${ingredient.id}`}>
+                    <td>
+                      <Button
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(ingredient.id)}
+                        active={this.state.chosenIngredients.includes(
+                          ingredient.id
+                        )}
+                      >
+                        {ingredient.name}
+                      </Button>
+                    </td>
+                    <td>{ingredient.id}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Col>
+          <Col>
+            <h1> y do i do dis to mahself </h1>
+          </Col>
+        </Row>
       </Container>
     );
   }

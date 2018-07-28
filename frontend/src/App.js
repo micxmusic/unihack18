@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 import Topbar from "./components/Topbar";
 import Contributions from "./components/Contributions";
 import IngredientSearchBox from "./components/IngredientSearchBox";
+import PonyNote from "./components/PonyNote";
 let store = createStore(ponyApp, applyMiddleware(thunk));
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/contributions" component={Contributions} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/" component={IngredientSearchBox} />
+              <Route exact path="/" component={PonyNote} />
               <Route component={NotFound} />
             </Switch>
           </React.Fragment>

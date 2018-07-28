@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { notes } from "../actions";
 import { Jumbotron, Button, Container, Row, Table } from "reactstrap";
 import Reccomendations from "./Reccomendations";
 import Popadd from "./Popadd";
@@ -34,7 +33,6 @@ class PonyNote extends Component {
   render() {
     return (
       <React.Fragment>
-        <IngredientSearchBox />
         <Reccomendations />
         <Jumbotron>
           <h2>Here is what you have left!</h2>
@@ -42,73 +40,33 @@ class PonyNote extends Component {
         </Jumbotron>
         <Container>
           <h3>My Ingredients</h3>
-          <Row className="justify-content-md-center">
-            <Table>
-              <tbody>
-                {this.props.notes.map((note, id) => (
-                  <tr key={`note_${id}`}>
-                    <td>{note.text}</td>
-                    <td>
-                      <Button
-                        color="primary"
-                        onClick={() => this.selectForEdit(id)}
-                      >
-                        edit
-                      </Button>{" "}
-                    </td>
-                    <td>
-                      <Button
-                        color="primary"
-                        onClick={() => this.props.deleteNote(id)}
-                      >
-                        delete
-                      </Button>{" "}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </Row>
           <Popadd />
-          {/* <form onSubmit={this.submitNote}>
-            <input
-              value={this.state.text}
-              placeholder="Enter new ingredient!"
-              onChange={e => this.setState({ text: e.target.value })}
-              required
-            />
-            <Button color="primary" type="submit">
-              Save
-            </Button>{" "}
-            <Button color="primary" onClick={this.resetForm}>
-              Reset
-            </Button>{" "}
-          </form> */}
         </Container>
+        <IngredientSearchBox />
       </React.Fragment>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    notes: state.notes,
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     notes: state.notes,
+//   };
+// };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addNote: text => {
-      dispatch(notes.addNote(text));
-    },
-    updateNote: (id, text) => {
-      dispatch(notes.updateNote(id, text));
-    },
-    deleteNote: id => {
-      dispatch(notes.deleteNote(id));
-    },
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addNote: text => {
+//       dispatch(notes.addNote(text));
+//     },
+//     updateNote: (id, text) => {
+//       dispatch(notes.updateNote(id, text));
+//     },
+//     deleteNote: id => {
+//       dispatch(notes.deleteNote(id));
+//     },
+//   };
+// };
 
 const items = [
   {
@@ -131,7 +89,4 @@ const items = [
   },
 ];
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PonyNote);
+export default PonyNote;

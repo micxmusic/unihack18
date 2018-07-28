@@ -44,6 +44,6 @@ class RecipeIngredientsViewSet(viewsets.ModelViewSet):
 class RecipeViewSet(viewsets.ModelViewSet):
     queryset = Recipe.objects.all()
     permission_classes = [permissions.AllowAny, ]
-    serializer_class = RecipeIngredientsSerializer
+    serializer_class = RecipeSerializer
     filter_backends = [DjangoFilterBackend]
     filter_fields = ['id', 'name', 'description', 'image', ]
