@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webpack_loader',
     'ingredients.apps.IngredientsConfig',
+    'rest_framework',
+    'django_filters',
+    # 'django_url_filter'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +53,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ponynote.urls'
-
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'url_filter.integrations.drf.DjangoFilterBackend',
+    ]
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
