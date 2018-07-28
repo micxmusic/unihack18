@@ -32,15 +32,15 @@ export default class Example extends React.Component {
           <PopoverBody>
             <form>
               <input
-                value={this.state.text}
+                value={this.state.ingredient}
                 placeholder="Enter new ingredient!"
-                onChange={e => this.setState({ text: e.target.value })}
+                onChange={e => this.setState({ ingredient: e.target.value })}
                 required
               />
               <input
-                value={this.state.text}
+                value={this.state.amount}
                 placeholder="Enter amount"
-                onChange={e => this.setState({ text: e.target.value })}
+                onChange={e => this.setState({ amount: e.target.value })}
                 required
               />
               <Button color="primary" type="submit">

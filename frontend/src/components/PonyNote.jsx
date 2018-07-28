@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { notes } from "../actions";
-import { Jumbotron, Button, Container } from "reactstrap";
+import { Jumbotron, Button, Container, Row, Table } from "reactstrap";
 import Reccomendations from "./Reccomendations";
 import Popadd from "./Popadd";
 
@@ -41,31 +41,33 @@ class PonyNote extends Component {
         </Jumbotron>
         <Container>
           <h3>My Ingredients</h3>
-          <table>
-            <tbody>
-              {this.props.notes.map((note, id) => (
-                <tr key={`note_${id}`}>
-                  <td>{note.text}</td>
-                  <td>
-                    <Button
-                      color="primary"
-                      onClick={() => this.selectForEdit(id)}
-                    >
-                      edit
-                    </Button>{" "}
-                  </td>
-                  <td>
-                    <Button
-                      color="primary"
-                      onClick={() => this.props.deleteNote(id)}
-                    >
-                      delete
-                    </Button>{" "}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <Row className="justify-content-md-center">
+            <Table>
+              <tbody>
+                {this.props.notes.map((note, id) => (
+                  <tr key={`note_${id}`}>
+                    <td>{note.text}</td>
+                    <td>
+                      <Button
+                        color="primary"
+                        onClick={() => this.selectForEdit(id)}
+                      >
+                        edit
+                      </Button>{" "}
+                    </td>
+                    <td>
+                      <Button
+                        color="primary"
+                        onClick={() => this.props.deleteNote(id)}
+                      >
+                        delete
+                      </Button>{" "}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Row>
           <Popadd />
           {/* <form onSubmit={this.submitNote}>
             <input
