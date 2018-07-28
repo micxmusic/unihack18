@@ -11,8 +11,10 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Media,
 } from "reactstrap";
 import Search from "./Search";
+import logo from "../assets/logo.png";
 
 export default class Topbar extends React.Component {
   constructor(props) {
@@ -32,13 +34,12 @@ export default class Topbar extends React.Component {
     return (
       <React.Fragment>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Logo</NavbarBrand>
+          <a className="navbar-brand" href="/">
+            <img src={logo} alt="logo" height="60vh" />
+          </a>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Search>Search</Search>
-              </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   User Icon

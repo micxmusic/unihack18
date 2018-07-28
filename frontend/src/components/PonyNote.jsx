@@ -32,18 +32,15 @@ class PonyNote extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Container fluid>
         <Reccomendations />
-        <Jumbotron>
+        {/* <Jumbotron>
           <h2>Here is what you have left!</h2>
           <hr />
-        </Jumbotron>
-        <Container>
-          <h3>My Ingredients</h3>
-          <Popadd />
-        </Container>
+        </Jumbotron> */}
+        <hr />
         <IngredientSearchBox />
-      </React.Fragment>
+      </Container>
     );
   }
 }
