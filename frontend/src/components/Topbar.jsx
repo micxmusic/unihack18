@@ -33,7 +33,7 @@ export default class Topbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="md" className="fixed-top">
           <a className="navbar-brand" href="/">
             <img src={logo} alt="logo" height="60vh" />
           </a>
