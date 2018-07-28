@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Media } from "reactstrap";
+import { Media, Container, Row, Col, Button } from "reactstrap";
 
 class UserProfile extends Component {
   render() {
@@ -10,8 +10,20 @@ class UserProfile extends Component {
             <Media object data-src="holder.js/64x64" alt="User Profile pic" />
           </Media>
           <Media body>
-            <Media heading>Username</Media>
-            Change password Equiptment owned Dietry Restrictions
+            <Container>
+              <Row>
+                <Media heading>Username: Unihack18</Media>
+              </Row>
+              <Row>
+                <Media heading>Password: XXXXXXXX</Media>
+                <Button color="link">Change password</Button>
+              </Row>
+              <Row>Equiptment owned:</Row>
+              <Row>Stove</Row>
+              <Row>Microwave</Row>
+              <Row>Dietry Restrictions:</Row>
+              <Row>None</Row>
+            </Container>
           </Media>
         </Media>
       </React.Fragment>
