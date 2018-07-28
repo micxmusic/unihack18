@@ -48,7 +48,7 @@ export default class Example extends React.Component {
                 <option>Pescetarian</option>
                 <option>Halal</option>
                 <option>None</option>
-              </Input>{" "}
+              </Input>
               <Button color="primary" size="lg" block>
                 Login
               </Button>
