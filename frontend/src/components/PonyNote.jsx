@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { notes } from "../actions";
-import { Jumbotron } from "reactstrap";
+import { Jumbotron, Button } from "reactstrap";
 import Reccomendations from "./Reccomendations";
+import Popadd from "./Popadd";
 
 class PonyNote extends Component {
   state = {
@@ -35,38 +36,50 @@ class PonyNote extends Component {
       <React.Fragment>
         <Reccomendations />
         <Jumbotron>
-          <h2>Welcome to PonyNote!</h2>
+          <h2>Here is what you have left!</h2>
           <hr />
         </Jumbotron>
-        <h3>Add new note</h3>
-        <form onSubmit={this.submitNote}>
-          <input
-            value={this.state.text}
-            placeholder="Enter note here..."
-            onChange={e => this.setState({ text: e.target.value })}
-            required
-          />
-          <input type="submit" value="Save Note" />
-          <button onClick={this.resetForm}>Reset</button>
-        </form>
-        <h3>Notes</h3>
+        <h3>My Ingredients</h3>
         <table>
           <tbody>
             {this.props.notes.map((note, id) => (
               <tr key={`note_${id}`}>
                 <td>{note.text}</td>
                 <td>
-                  <button onClick={() => this.selectForEdit(id)}>edit</button>
+                  <Button
+                    color="primary"
+                    onClick={() => this.selectForEdit(id)}
+                  >
+                    edit
+                  </Button>{" "}
                 </td>
                 <td>
-                  <button onClick={() => this.props.deleteNote(id)}>
+                  <Button
+                    color="primary"
+                    onClick={() => this.props.deleteNote(id)}
+                  >
                     delete
-                  </button>
+                  </Button>{" "}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        <Popadd />
+        <form onSubmit={this.submitNote}>
+          <input
+            value={this.state.text}
+            placeholder="Enter new ingredient!"
+            onChange={e => this.setState({ text: e.target.value })}
+            required
+          />
+          <Button color="primary" type="submit">
+            Save
+          </Button>{" "}
+          <Button color="primary" onClick={this.resetForm}>
+            Reset
+          </Button>{" "}
+        </form>
       </React.Fragment>
     );
   }
