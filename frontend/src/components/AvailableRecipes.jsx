@@ -16,23 +16,23 @@ class AvailableRecipes extends Component {
   componentDidMount() {
     this.props.fetchRecipes([]);
   }
-  componentDidUpdate(prevProps, prevState) {
-    let prevIngredients = prevProps.ingredients;
-    let currIngredients = this.props.ingredients;
-    // if (prevIngredients.length === currIngredients.length) {
-    //   for (let i = 0; i < prevIngredients.length; i++) {
-    //     if (prevIngredients[i] !== currIngredients[i]) {
-    //       console.log("updated");
-    //       this.props.fetchRecipes(currIngredients);
-    //       return;
-    //     }
-    //   }
-    // } else {
-      
-    //   console.log("updated");
-    this.props.fetchRecipes(currIngredients);
-    // }
-  }
+  //   componentDidUpdate(prevProps, prevState) {
+  //     let prevIngredients = prevProps.ingredients;
+  //     let currIngredients = this.props.ingredients;
+  //     // if (prevIngredients.length === currIngredients.length) {
+  //     //   for (let i = 0; i < prevIngredients.length; i++) {
+  //     //     if (prevIngredients[i] !== currIngredients[i]) {
+  //     //       console.log("updated");
+  //     //       this.props.fetchRecipes(currIngredients);
+  //     //       return;
+  //     //     }
+  //     //   }
+  //     // } else {
+
+  //     //   console.log("updated");
+  //     this.props.fetchRecipes(currIngredients);
+  //     // }
+  //   }
 
   render() {
     // console.log(this.props.ingredients);

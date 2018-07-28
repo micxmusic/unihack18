@@ -6,24 +6,24 @@ export const fetchRecipes = ingredients => {
     let headers = { "Content-Type": "application/json" };
     let apiCall = "/api/RecipeIngredient/";
     let recipeApiCall = "/api/Recipe/";
-    const availableIngredients = [];
-    if (ingredients.length !== 0) {
-      apiCall += "?ingredient__in=";
-      apiCall += ingredients.join(",");
-    }
+    // const availableIngredients = [];
+    // if (ingredients.length !== 0) {
+    //   apiCall += "?ingredient__in=";
+    //   apiCall += ingredients.join(",");
+    // }
 
-    fetch(apiCall, { headers })
-      .then(res => res.json())
-      .then(data => {
-        for (let i = 0; i < data.length; i++) {
-          if (!availableIngredients.includes(data[i].belongs_to)) {
-            console.log(data[i].belongs_to);
-            availableIngredients.push(data[i].belongs_to);
-          }
-        }
-      });
-    console.log(availableIngredients);
-    return fetch(apiCall, { headers })
+    // fetch(apiCall, { headers })
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     for (let i = 0; i < data.length; i++) {
+    //       if (!availableIngredients.includes(data[i].belongs_to)) {
+    //         console.log(data[i].belongs_to);
+    //         availableIngredients.push(data[i].belongs_to);
+    //       }
+    //     }
+    //   });
+    // console.log(availableIngredients);
+    return fetch(recipeApiCall, { headers })
       .then(res => {
         if (res.status < 500) {
           return res.json().then(data => {

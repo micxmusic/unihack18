@@ -73,7 +73,7 @@ class IngredientSearchBox extends Component {
             </Table>
           </Col>
           <Col>
-            <h1> y do i do dis to mahself </h1>
+            <AvailableRecipes />
           </Col>
         </Row>
       </Container>
