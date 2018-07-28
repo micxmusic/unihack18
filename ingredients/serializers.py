@@ -4,7 +4,12 @@ from .models import (Diet, Type, ValidIngredients, UserIngredients,
                      RecipeIngredients)
 
 
-class TypeSerializer(serializers.ModelSerializer):
+class DietSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Type
-        fields = ("text", )
+        model = Diet
+        fields = ("id", "text", "exclusion")
+
+class ValidIngredientsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ValidIngredients
+        fields = ('id', 'text', 'units', 'classification', )

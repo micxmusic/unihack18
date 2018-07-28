@@ -1,10 +1,12 @@
 from django.conf.urls import include, url
 from rest_framework import routers
 
-from .api import TypeViewSet
+from .api import DietViewSet, ValidIngredientsViewSet
 
 router = routers.DefaultRouter()
-router.register('Type', TypeViewSet, 'Type')
+router.register('Diet', DietViewSet, 'Diet')
+router.register('ValidIngredients',
+                ValidIngredientsViewSet, 'ValidIngredients')
 
 urlpatterns = [
     url("^", include(router.urls)),
