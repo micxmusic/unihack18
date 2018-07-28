@@ -125,3 +125,10 @@ venv.bak/
 frontend/yarn.lock
 webpack-stats.dev.json
 .vscode/
+webpack-stats.dev.json
+.vscode/settings.json
+ingredients/migrations/0001_initial.py
+ingredients/migrations/0002_recipeingredients_belongs_to.py
+ingredients/migrations/0003_auto_20180728_2045.py
+ingredients/migrations/0004_auto_20180728_2048.py
+ingredients/migrations/0005_recipeingredient_amount.py

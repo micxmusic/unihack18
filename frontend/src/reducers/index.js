@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 import notes from "./notes";
-
+import ingredients from "./ingredients";
 
 const ponyApp = combineReducers({
-  notes,
-})
+  ingredients,
+});
 
 export default ponyApp;

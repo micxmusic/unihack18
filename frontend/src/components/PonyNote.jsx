@@ -5,7 +5,7 @@ import { notes } from "../actions";
 import { Jumbotron, Button, Container, Row, Table } from "reactstrap";
 import Reccomendations from "./Reccomendations";
 import Popadd from "./Popadd";
-
+import IngredientSearchBox from "./IngredientSearchBox";
 class PonyNote extends Component {
   state = {
     text: "",
@@ -34,6 +34,7 @@ class PonyNote extends Component {
   render() {
     return (
       <React.Fragment>
+        <IngredientSearchBox />
         <Reccomendations />
         <Jumbotron>
           <h2>Here is what you have left!</h2>

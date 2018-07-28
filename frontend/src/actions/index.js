@@ -1,3 +1,3 @@
-import * as notes from "./notes";
+import * as ingredients from "./ingredients";
 
-export {notes}
+export {ingredients}

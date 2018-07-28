@@ -2,56 +2,92 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { ingredients } from "../actions";
-import { Jumbotron, Button, Container, Row, Table, Input } from "reactstrap";
+import {
+  Jumbotron,
+  Button,
+  Container,
+  Row,
+  Table,
+  Input,
+  Form,
+} from "reactstrap";
 
 class IngredientSearchBox extends Component {
-    state = {
-        chosenIngredients: [],
-        searchQuery:"",
-    };
+  state = {
+    chosenIngredients: [],
+    searchQuery: "",
+  };
 
-    componentWillMount() {
-        this.props.fetchIngredients(this.state.searchQuery);
+  componentDidMount() {
+    this.props.fetchIngredients("");
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.searchQuery !== this.state.searchQuery) {
+      this.props.fetchIngredients(this.state.searchQuery);
     }
-    render() {
-        return (
-            <Container fluid>
-                <Input
-                    placeholder="Enter an ingredient"
-                    value={this.state.searchQuery}
-                    onChange={(e) => this.setState({searchQuery:e.target.value})}
-                />
-                <hr />
-                <Table>
-                    <tbody>
-                        {this.props.ingredients.map((id, ingredient) => (
-                            <tr key={`ingredient_${ingredient.id}`}>
-                                <td>{ingredient.text}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
-            </Container>
-        );
+  }
+
+  onCheckboxBtnClick(selected) {
+    const index = this.state.chosenIngredients.indexOf(selected);
+    if (index < 0) {
+      this.state.chosenIngredients.push(selected);
+    } else {
+      this.state.chosenIngredients.splice(index, 1);
     }
+    this.setState({ chosenIngredients: [...this.state.chosenIngredients] });
+  }
+
+  render() {
+    console.log(this.state.chosenIngredients);
+    return (
+      <Container fluid>
+        <Input
+          placeholder="Enter an ingredient"
+          value={this.state.searchQuery}
+          onChange={e => this.setState({ searchQuery: e.target.value })}
+        />
+
+        <hr />
+        <Table>
+          <tbody>
+            {this.props.ingredients.map((ingredient, id) => (
+              <tr key={`ingredient_${ingredient.id}`}>
+                <td>
+                  <Button
+                    color="primary"
+                    onClick={() => this.onCheckboxBtnClick(ingredient.id)}
+                    active={this.state.chosenIngredients.includes(
+                      ingredient.id
+                    )}
+                  >
+                    {ingredient.name}
+                  </Button>
+                </td>
+                <td>{ingredient.id}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Container>
+    );
+  }
 }
 
 const mapStateToProps = state => {
-    return {
-        notes: state.notes,
-    };
+  return {
+    ingredients: state.ingredients,
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-        fetchNote: search => {
-            dispatch(ingredients.fetchIngredients(search));
-        }
-    };
+  return {
+    fetchIngredients: search => {
+      dispatch(ingredients.fetchIngredients(search));
+    },
+  };
 };
 
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(IngredientSearchBox);
