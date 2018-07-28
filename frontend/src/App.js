@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import PonyNote from "./components/PonyNote";
 import NotFound from "./components/NotFound";
+import Login from "./components/Login";
 import { Provider } from "react-redux";
 import ponyApp from "./reducers";
 import { createStore, applyMiddleware } from "redux";
@@ -18,6 +19,7 @@ class App extends Component {
           <React.Fragment>
             <Topbar />
             <Switch>
+              <Route exact path="/login" component={Login} />
               <Route exact path="/" component={PonyNote} />
               <Route component={NotFound} />
             </Switch>

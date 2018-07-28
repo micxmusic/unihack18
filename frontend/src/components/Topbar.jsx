@@ -44,10 +44,11 @@ export default class Topbar extends React.Component {
                   User Icon
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
+                  <DropdownItem>My Recipes</DropdownItem>
+                  <DropdownItem>My Shopping List</DropdownItem>
+                  <DropdownItem>Profile</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
+                  <DropdownItem>Logout</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
