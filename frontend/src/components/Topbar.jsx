@@ -33,7 +33,7 @@ export default class Topbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar color="light" light expand="md" className="fixed-top">
+        <Navbar color="light" light expand="md">
           <a className="navbar-brand" href="/">
             <img src={logo} alt="logo" height="60vh" />
           </a>
@@ -47,9 +47,9 @@ export default class Topbar extends React.Component {
                 <DropdownMenu right>
                   <DropdownItem>My Recipes</DropdownItem>
                   <DropdownItem>My Shopping List</DropdownItem>
-                  <DropdownItem>Profile</DropdownItem>
+                  <DropdownItem href="/myprofile">Profile</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>Logout</DropdownItem>
+                  <DropdownItem href="/login">Logout</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>

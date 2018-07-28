@@ -16,11 +16,11 @@ export default class Example extends React.Component {
     return (
       <React.Fragment>
         <Container>
-          <center>
-            <img src={login} alt="login" height="300px" />
-          </center>
           <Table>
             <Form>
+              <center>
+                <img src={login} alt="login" height="300px" />
+              </center>
               <FormGroup>
                 <Label for="Email">Email</Label>
                 <Input
@@ -39,7 +39,7 @@ export default class Example extends React.Component {
                   placeholder="input password"
                 />
               </FormGroup>
-              <Button color="primary" size="lg" block>
+              <Button color="primary" size="lg" block href="/">
                 Login
               </Button>
             </Form>
