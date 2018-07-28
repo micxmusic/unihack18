@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Popover,
-  PopoverHeader,
-  PopoverBody,
-  Button,
-} from "reactstrap";
+import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 
 export default class Example extends React.Component {
   constructor(props) {
