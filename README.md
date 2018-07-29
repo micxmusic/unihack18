@@ -15,5 +15,5 @@ pip install -r requirements.txt
 
 ```
 python manage.py runserver
-cd frontend/ && yarn start
+cd frontend/ && npm start
 ```
