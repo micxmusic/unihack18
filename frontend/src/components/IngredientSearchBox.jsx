@@ -66,7 +66,6 @@ class IngredientSearchBox extends Component {
                         {ingredient.name}
                       </Button>
                     </td>
-                    <td>{ingredient.id}</td>
                   </tr>
                 ))}
               </tbody>

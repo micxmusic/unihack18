@@ -38,6 +38,34 @@ export default class Topbar extends React.Component {
           <a className="navbar-brand" href="/">
             <img src={logo} alt="logo" height="60vh" />
           </a>
+          {/* <NavItem>
+            <NavLink href="/contributions">My Recipes</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/mylist">My Shopping List</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/myprofile">Profile</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/login">Logout</NavLink>
+          </NavItem> */}
+          {/* <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a href="/contributions">My Recipes </a>
+              </li>
+              <li class="nav-item">
+                <a href="/mylist">My Shopping List </a>
+              </li>
+              <li class="nav-item">
+                <a href="/myprofile">Profile </a>
+              </li>
+              <li class="nav-item">
+                <a href="/login">Logout </a>
+              </li>
+            </ul>
+          </div> */}
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
