@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Table, Media, Container, Row, Col, Button } from "reactstrap";
+import login from "../assets/login.png";
 
 class UserProfile extends Component {
   render() {
@@ -9,11 +10,7 @@ class UserProfile extends Component {
           <Col>
             <Row>
               <Media left href="#">
-                <Media
-                  object
-                  data-src="holder.js/64x64"
-                  alt="User Profile pic"
-                />
+                <Media img src={login} width="100vh" alt="user profile pic" />
               </Media>
             </Row>
             <Table>
