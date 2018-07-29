@@ -18,14 +18,14 @@ const items = [
   {
     src:
       "https://stmed.net/sites/default/files/food-wallpapers-28249-766292.jpg",
-    altText: "Slide 2",
-    caption: "Slide 2",
+    altText: "BBQ Skewers",
+    caption: "BBQ Skewers",
   },
   {
     src:
       "http://www.wallpapers4u.org/wp-content/uploads/cake_raspberry_dessert_berry_71495_1920x1080.jpg",
-    altText: "Slide 3",
-    caption: "Slide 3",
+    altText: "Choc Mousse Cake",
+    caption: "Choc Mousse Cake",
   },
 ];
 

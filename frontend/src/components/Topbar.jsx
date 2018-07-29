@@ -46,7 +46,7 @@ export default class Topbar extends React.Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem href="/contributions">My Recipes</DropdownItem>
-                  <DropdownItem>My Shopping List</DropdownItem>
+                  <DropdownItem href="/mylist">My Shopping List</DropdownItem>
                   <DropdownItem>My Calendar</DropdownItem>
                   <DropdownItem href="/myprofile">Profile</DropdownItem>
                   <DropdownItem divider />

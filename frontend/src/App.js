@@ -13,6 +13,7 @@ import IngredientSearchBox from "./components/IngredientSearchBox";
 import Piggu from "./components/Piggu";
 import UserProfile from "./components/UserProfile";
 import AddRecipe from "./components/AddRecipe";
+import ShoppingList from "./components/ShoppingList";
 let store = createStore(ponyApp, applyMiddleware(thunk));
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/addrecipe" component={AddRecipe} />
               <Route exact path="/myprofile" component={UserProfile} />
+              <Route exact path="/mylist" component={ShoppingList} />
               <Route exact path="/contributions" component={Contributions} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/" component={Piggu} />
