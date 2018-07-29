@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 import Search from "./Search";
 import logo from "../assets/logo.png";
+import userIcon from "../assets/usericon.png";
 
 export default class Topbar extends React.Component {
   constructor(props) {
@@ -42,7 +43,7 @@ export default class Topbar extends React.Component {
             <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  User Icon
+                  <img alt="User Icon" src={userIcon} height="30vh" />
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem href="/contributions">My Recipes</DropdownItem>
